@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.Enums;
+﻿namespace MarketFlow.Enums;
 
 public enum ResponseCode
 {

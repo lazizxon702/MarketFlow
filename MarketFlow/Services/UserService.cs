@@ -1,10 +1,14 @@
-﻿using MarketPlace.DTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.Data;
+using MarketFlow.DTO.UserDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Inner;
+using MarketFlow.Models.Response;
+using MarketPlace;
+using MarketFlow.DTO;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarketPlace.Services;
+namespace MarketFlow.Services;
 
 public class UserService(AppDbContext db) : IUserService
 {

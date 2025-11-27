@@ -1,18 +1,20 @@
-﻿namespace MarketPlace.Models.Response
+﻿namespace MarketFlow.Models.Response
 {
     public class ErrorResponse
     {
         public string Message { get; set; }          
-        public int Code { get; set; }       
-        public object Details { get; set; }          
+        public int Code { get; set; }
 
-        public ErrorResponse() { }
 
-        public ErrorResponse(string message, int code = 500, object details = null)
+        public ErrorResponse()
+        {
+            
+        }
+
+        public ErrorResponse(string message, int code = 500)
         {
             Message = message;
             Code = code;
-            Details = details;
         }
     }
 }

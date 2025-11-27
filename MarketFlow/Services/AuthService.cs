@@ -1,19 +1,21 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using MarketFlow;
+using MarketFlow.Data;
+using MarketFlow.DTO.AuthDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Inner;
+using MarketFlow.Models.Response;
+using MarketPlace;
 using MarketPlace.DTO.Auth;
-using MarketPlace.DTO.AuthDTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
-namespace MarketPlace.Services;
+namespace MarketFlow.Services;
 
 public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
-{
+ {
     public async Task<DefaultResponse<string>> Login(AuthLoginDTO dto)
     {
         try
@@ -40,12 +42,12 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
     
     public async Task<DefaultResponse<string>> SignUp(AuthRegisterDTO dto)
     {
-        try
+        try 
         {
          
             if (!dto.Email.EndsWith("@gmail.com"))
                 return new DefaultResponse<string>(new ErrorResponse("Faqat '@gmail.com' email manzili qabul qilinadi!", (int)ResponseCode.ValidationError));
-
+        
       
             if (await db.Users.AnyAsync(u => u.Username == dto.Username))
                 return new DefaultResponse<string>(new ErrorResponse("Bu foydalanuvchi allaqachon mavjud!", (int)ResponseCode.ValidationError));
@@ -67,7 +69,7 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
                 Email = dto.Email,
                 Password = dto.Password,
                 Role = role,
-                CreatedDate = DateTime.Now,
+                CreatedDate = DateTime.UtcNow,
                 IsDeleted = false
             };
 
@@ -81,7 +83,7 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
             return new DefaultResponse<string>(new ErrorResponse("Ro‘yxatdan o‘tishda xatolik yuz berdi", (int)ResponseCode.ServerError));
         }
     }
-
+    
     
     private string GenerateJwtToken(User user)
     {
@@ -98,10 +100,10 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
         };
 
         var token = new JwtSecurityToken(
-            claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            claims: claims,  
+            expires: DateTime.UtcNow.AddHours(2), 
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
-}
+ }

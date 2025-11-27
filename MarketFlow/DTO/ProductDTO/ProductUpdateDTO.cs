@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO.ProductDTO;
+﻿namespace MarketFlow.DTO.ProductDTO;
 
 public class ProductUpdateDTO
 {

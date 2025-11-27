@@ -1,4 +1,4 @@
-﻿namespace MarketPlace;
+﻿namespace MarketFlow.Models.Inner;
 
 public class User
 {

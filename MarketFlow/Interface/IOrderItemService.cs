@@ -1,7 +1,7 @@
-﻿using MarketPlace.DTO.OrderItemDTO;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.DTO.OrderItemDTO;
+using MarketFlow.Models.Response;
 
-namespace MarketPlace.Interface;
+namespace MarketFlow.Interface;
 
 public interface IOrderItemService
 {

@@ -1,7 +1,7 @@
-﻿using MarketPlace.DTO.ProductDTO;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.DTO.ProductDTO;
+using MarketFlow.Models.Response;
 
-namespace MarketPlace.Interface;
+namespace MarketFlow.Interface;
 
 public interface IProductService
 {

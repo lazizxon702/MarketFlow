@@ -1,7 +1,8 @@
-﻿using MarketPlace.DTO.CategoryDTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.DTO.CategoryDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Response;
+using MarzketFlow.DTO.CategoryDTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

@@ -147,3 +147,4 @@ C:\Users\user\RiderProjects\MarketFlow\MarketFlow\obj\Debug\net9.0\refint\Market
 C:\Users\user\RiderProjects\MarketFlow\MarketFlow\obj\Debug\net9.0\MarketFlow.pdb
 C:\Users\user\RiderProjects\MarketFlow\MarketFlow\obj\Debug\net9.0\MarketFlow.genruntimeconfig.cache
 C:\Users\user\RiderProjects\MarketFlow\MarketFlow\obj\Debug\net9.0\ref\MarketFlow.dll
+C:\Users\user\RiderProjects\MarketFlow\MarketFlow\obj\Debug\net9.0\MarketFlow.sourcelink.json

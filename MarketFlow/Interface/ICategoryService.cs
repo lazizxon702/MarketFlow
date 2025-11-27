@@ -1,7 +1,8 @@
-﻿using MarketPlace.DTO.CategoryDTO;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.DTO.CategoryDTO;
+using MarketFlow.Models.Response;
+using MarzketFlow.DTO.CategoryDTO;
 
-namespace MarketPlace.Interface;
+namespace MarketFlow.Interface;
 
 public interface ICategoryService
 {

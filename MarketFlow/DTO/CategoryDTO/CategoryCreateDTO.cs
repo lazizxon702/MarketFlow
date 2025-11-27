@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO.CategoryDTO;
+﻿namespace MarketFlow.DTO.CategoryDTO;
 
 public class CategoryCreateDTO
 {

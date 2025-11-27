@@ -1,10 +1,13 @@
-﻿using MarketPlace.DTO.ProductDTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.Data;
+using MarketFlow.DTO.ProductDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Inner;
+using MarketFlow.Models.Response;
+using MarketPlace;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarketPlace.Services;
+namespace MarketFlow.Services;
 
 public class ProductService(AppDbContext db) : IProductService
 {
@@ -32,7 +35,6 @@ public class ProductService(AppDbContext db) : IProductService
             return new DefaultResponse<List<ProductReadDTO>>(error);
         }
     }
-
     
     public async Task<DefaultResponse<ProductReadDTO>> GetById(int id)
     {
@@ -50,13 +52,10 @@ public class ProductService(AppDbContext db) : IProductService
                 })
                 .FirstOrDefaultAsync();
 
-            if (product == null)
-            {
-                var error = new ErrorResponse("Mahsulot topilmadi", (int)ResponseCode.NotFound);
-                return new DefaultResponse<ProductReadDTO>(error);
-            }
+            if (product != null) return new DefaultResponse<ProductReadDTO>(product, "Mahsulot topildi");
+            var error = new ErrorResponse("Mahsulot topilmadi", (int)ResponseCode.NotFound);
+            return new DefaultResponse<ProductReadDTO>(error);
 
-            return new DefaultResponse<ProductReadDTO>(product, "Mahsulot topildi");
         }
         catch
         {
@@ -64,7 +63,7 @@ public class ProductService(AppDbContext db) : IProductService
             return new DefaultResponse<ProductReadDTO>(error);
         }
     }
-
+    
     
     public async Task<DefaultResponse<string>> Create(ProductCreateDTO dto)
     {

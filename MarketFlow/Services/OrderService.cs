@@ -1,11 +1,13 @@
-﻿using MarketPlace.DTO;
-using MarketPlace.Enums;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.Data;
+using MarketFlow.DTO.OrderDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Inner;
+using MarketFlow.Models.Response;
+using MarketFlow.DTO;
 using Microsoft.EntityFrameworkCore;
 
-
-namespace MarketPlace.Services;
+namespace MarketFlow.Services;
 
 public class OrderService(AppDbContext db, IHttpContextAccessor httpContextAccessor) : IOrderService
 {

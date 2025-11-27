@@ -1,8 +1,8 @@
+using MarketFlow.DTO.AuthDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Response;
 using MarketPlace.DTO.Auth;
-using MarketPlace.DTO.AuthDTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketPlace.Controller;

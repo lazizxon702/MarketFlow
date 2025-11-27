@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO.AuthDTO;
+﻿namespace MarketFlow.DTO.AuthDTO;
 
 public class AuthRegisterDTO
 {

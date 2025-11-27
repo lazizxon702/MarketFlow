@@ -1,7 +1,8 @@
-﻿using MarketPlace.DTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.DTO.UserDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Response;
+using MarketPlace.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -54,8 +55,7 @@ public class UserController(IUserService userService) : ControllerBase
         var result = await userService.UpdateUser(id, dto);
         return result;
     }
-
- 
+    
     [HttpDelete("{id:int}")]
     public async Task<DefaultResponse<bool>> Delete(int id)
     {

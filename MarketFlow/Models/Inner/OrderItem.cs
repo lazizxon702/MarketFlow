@@ -1,4 +1,6 @@
-﻿namespace MarketPlace;
+﻿using MarketPlace;
+
+namespace MarketFlow.Models.Inner;
 
 public class OrderItem
 {

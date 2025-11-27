@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO.OrderItemDTO;
+﻿namespace MarketFlow.DTO.OrderItemDTO;
 
 public class OrderItemReadDTO
 {

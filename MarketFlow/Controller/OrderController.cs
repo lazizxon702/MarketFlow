@@ -1,7 +1,8 @@
-﻿using MarketPlace.DTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.DTO.OrderDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Response;
+using MarketPlace.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace MarketPlace.Controller;
 [Route("api/[controller]")]
 public class OrderController(IOrderService orderService) : ControllerBase
 {
+    [Authorize(Roles = "Admin")]
     [HttpGet]
     public async Task<List<DefaultResponse<OrderReadDTO>>> GetAll()
     {

@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO;
+﻿namespace MarketFlow.DTO.UserDTO;
 
 public class UserCreateDTO
 {

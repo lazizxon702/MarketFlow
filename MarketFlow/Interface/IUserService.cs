@@ -1,7 +1,8 @@
-﻿using MarketPlace.DTO;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.DTO.UserDTO;
+using MarketFlow.Models.Response;
+using MarketPlace.DTO;
 
-namespace MarketPlace.Interface
+namespace MarketFlow.Interface
 {
     public interface IUserService
     {
@@ -15,8 +16,5 @@ namespace MarketPlace.Interface
         
         Task<DefaultResponse<bool>> Delete(int id);
         
-        
-        
-
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MarketPlace;
+﻿namespace MarketFlow.Models.Inner;
 
 public class Product
 {
@@ -16,7 +16,7 @@ public class Product
     
     public Category Category { get; set; }
     
-    public bool IsDeleted { get; set; } = false;
+    public bool IsDeleted { get; set; } 
     
     public ICollection<OrderItem> OrderItems{ get; set; }
 }

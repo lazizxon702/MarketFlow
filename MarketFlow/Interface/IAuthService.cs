@@ -1,8 +1,8 @@
-﻿using MarketPlace.DTO.Auth;
-using MarketPlace.DTO.AuthDTO;
-using MarketPlace.Models.Response;
+﻿using MarketFlow.DTO.AuthDTO;
+using MarketFlow.Models.Response;
+using MarketPlace.DTO.Auth;
 
-namespace MarketPlace.Interface;
+namespace MarketFlow.Interface;
 
 public interface IAuthService
 {

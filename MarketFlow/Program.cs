@@ -1,11 +1,12 @@
  using MarketPlace;
- using MarketPlace.Interface;
- using MarketPlace.Services;
  using Microsoft.AspNetCore.Authentication.JwtBearer;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.IdentityModel.Tokens;
  using Microsoft.OpenApi.Models;
  using System.Text;
+ using MarketFlow.Data;
+ using MarketFlow.Interface;
+ using MarketFlow.Services;
 
  var builder = WebApplication.CreateBuilder(args);
 
@@ -36,8 +37,7 @@
             {
                 Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
             },
-            []
-            
+            Array.Empty<string>()
         }
     });
  });

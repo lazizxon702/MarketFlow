@@ -1,6 +1,7 @@
-﻿using MarketPlace.Enums;
+﻿using MarketFlow.Enums;
+using MarketPlace;
 
-namespace MarketPlace;
+namespace MarketFlow.Models.Inner;
 
 public class Order
 {

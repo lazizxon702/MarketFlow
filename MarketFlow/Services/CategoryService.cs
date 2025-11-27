@@ -1,10 +1,14 @@
-﻿using MarketPlace.DTO.CategoryDTO;
-using MarketPlace.Interface;
-using MarketPlace.Models.Response;
-using MarketPlace.Enums;
+﻿using MarketFlow.Data;
+using MarketFlow.DTO.CategoryDTO;
+using MarketFlow.Enums;
+using MarketFlow.Interface;
+using MarketFlow.Models.Inner;
+using MarketFlow.Models.Response;
+using MarketPlace;
+using MarzketFlow.DTO.CategoryDTO;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarketPlace.Services;
+namespace MarketFlow.Services;
 
 public class CategoryService(AppDbContext db) : ICategoryService
 {
