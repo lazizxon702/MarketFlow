@@ -67,7 +67,7 @@ public class AuthService(AppDbContext db, IConfiguration config) : IAuthService
                 Email = dto.Email,
                 Password = dto.Password,
                 Role = role,
-                CreatedDate = DateTime.UtcNow,
+                CreatedDate = DateTime.Now,
                 IsDeleted = false
             };
 
