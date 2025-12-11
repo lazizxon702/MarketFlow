@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pxPrLsPRSIw=",
+  "dgSpecHash": "61M7eFjYnh0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\RiderProjects\\MarketFlow\\MarketFlow\\MarketFlow.csproj",
+  "projectFilePath": "C:\\Users\\user\\RiderProjects\\MarketFlowV2\\MarketFlow\\MarketFlow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\devart.data\\6.0.290\\devart.data.6.0.290.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\devart.data.postgresql\\8.4.290\\devart.data.postgresql.8.4.290.nupkg.sha512",

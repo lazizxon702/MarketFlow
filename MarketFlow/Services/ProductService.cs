@@ -4,7 +4,8 @@ using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Inner;
 using MarketFlow.Models.Response;
-using MarketPlace;
+
+
 using Microsoft.EntityFrameworkCore;
 
 namespace MarketFlow.Services;
@@ -35,7 +36,7 @@ public class ProductService(AppDbContext db) : IProductService
             return new DefaultResponse<List<ProductReadDTO>>(error);
         }
     }
-    
+
     public async Task<DefaultResponse<ProductReadDTO>> GetById(int id)
     {
         try
@@ -55,7 +56,6 @@ public class ProductService(AppDbContext db) : IProductService
             if (product != null) return new DefaultResponse<ProductReadDTO>(product, "Mahsulot topildi");
             var error = new ErrorResponse("Mahsulot topilmadi", (int)ResponseCode.NotFound);
             return new DefaultResponse<ProductReadDTO>(error);
-
         }
         catch
         {
@@ -63,8 +63,8 @@ public class ProductService(AppDbContext db) : IProductService
             return new DefaultResponse<ProductReadDTO>(error);
         }
     }
-    
-    
+
+
     public async Task<DefaultResponse<string>> Create(ProductCreateDTO dto)
     {
         try
@@ -98,7 +98,7 @@ public class ProductService(AppDbContext db) : IProductService
         }
     }
 
-   
+
     public async Task<DefaultResponse<bool>> Update(int id, ProductUpdateDTO dto)
     {
         try
@@ -125,7 +125,7 @@ public class ProductService(AppDbContext db) : IProductService
         }
     }
 
- 
+
     public async Task<DefaultResponse<bool>> Delete(int id)
     {
         try
