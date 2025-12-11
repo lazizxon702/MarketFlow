@@ -2,11 +2,10 @@
 using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Response;
-using MarketPlace.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MarketPlace.Controller;
+namespace MarketFlow.Controller;
 
 [Authorize]
 [ApiController]

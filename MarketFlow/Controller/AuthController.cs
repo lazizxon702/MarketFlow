@@ -2,10 +2,9 @@ using MarketFlow.DTO.AuthDTO;
 using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Response;
-using MarketPlace.DTO.Auth;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MarketPlace.Controller;
+namespace MarketFlow.Controller;
 
 [ApiController]
 [Route("api/[controller]")]

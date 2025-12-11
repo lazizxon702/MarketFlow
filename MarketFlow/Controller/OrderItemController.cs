@@ -5,7 +5,7 @@ using MarketFlow.Models.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MarketPlace.Controller;
+namespace MarketFlow.Controller;
 
 [Authorize]
 [ApiController]

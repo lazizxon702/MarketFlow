@@ -4,8 +4,6 @@ using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Inner;
 using MarketFlow.Models.Response;
-using MarketPlace;
-using MarzketFlow.DTO.CategoryDTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace MarketFlow.Services;

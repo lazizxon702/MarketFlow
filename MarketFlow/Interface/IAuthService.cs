@@ -1,6 +1,5 @@
 ﻿using MarketFlow.DTO.AuthDTO;
 using MarketFlow.Models.Response;
-using MarketPlace.DTO.Auth;
 
 namespace MarketFlow.Interface;
 

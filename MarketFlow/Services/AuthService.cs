@@ -7,8 +7,6 @@ using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Inner;
 using MarketFlow.Models.Response;
-using MarketPlace;
-using MarketPlace.DTO.Auth;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 

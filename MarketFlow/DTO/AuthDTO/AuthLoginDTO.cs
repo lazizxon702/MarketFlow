@@ -1,4 +1,4 @@
-﻿namespace MarketPlace.DTO.Auth;
+﻿namespace MarketFlow.DTO.AuthDTO;
 
 public class AuthLoginDTO
 {

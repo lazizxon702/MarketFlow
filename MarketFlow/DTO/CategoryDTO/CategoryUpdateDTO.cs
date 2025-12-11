@@ -1,4 +1,4 @@
-﻿namespace MarzketFlow.DTO.CategoryDTO;
+﻿namespace MarketFlow.DTO.CategoryDTO;
 
 public class CategoryUpdateDTO
 {
