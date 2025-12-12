@@ -12,6 +12,7 @@ namespace MarketFlow.Controller;
 [Authorize] 
 public class CategoryController(ICategoryService categoryService) : ControllerBase
 {
+    [AllowAnonymous]
     [HttpGet]
     public async Task<DefaultResponse<List<CategoryReadDTO>>> GetAll()
     {

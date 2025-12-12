@@ -24,6 +24,7 @@ public class ProductService(AppDbContext db) : IProductService
                     NameS = p.NameS,
                     Description = p.Description,
                     Price = p.Price,
+                    CategoryName = p.Category.Keyword,
                     CreatedDate = p.CreatedDate
                 })
                 .ToListAsync();

@@ -12,7 +12,7 @@ namespace MarketFlow.Controller;
 [ApiController]
 public class ProductController(IProductService productService) : ControllerBase
 {
-    
+    [AllowAnonymous]
     [HttpGet]
     public async Task<DefaultResponse<List<ProductReadDTO>>> GetAll()
     {
