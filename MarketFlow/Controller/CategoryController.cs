@@ -13,18 +13,18 @@ namespace MarketFlow.Controller;
 public class CategoryController(ICategoryService categoryService) : ControllerBase
 {
     [AllowAnonymous]
-    [HttpGet]
-    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetAll()
+    [HttpGet( "GetMainCategories")]
+    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetMainCategories()
     {
-        var categories = await categoryService.GetAll();
+        var categories = await categoryService.GetMainCategories();
         return categories;
     }
 
-   
-    [HttpGet("{id:int}")]
-    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetById(int id)
+    [AllowAnonymous]
+    [HttpGet("{id:int}", Name = "GetChildCategories")]
+    public async Task<DefaultResponse<CategoryReadDTO>> GetChildCategories(int id)
     {
-        var category = await categoryService.GetById(id);
+        var category = await categoryService.GetChildCategories(id);
         return category;
     }
 

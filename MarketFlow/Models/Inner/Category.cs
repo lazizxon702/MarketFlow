@@ -1,4 +1,6 @@
-﻿namespace MarketFlow.Models.Inner;
+﻿using MarketFlow.DTO.ProductDTO;
+
+namespace MarketFlow.Models.Inner;
 
 public class Category
 {
@@ -9,6 +11,10 @@ public class Category
     public DateTime CreatedDate { get; set; }
 
     public bool IsDeleted { get; set; } = false;
+    
+  
+    public int? mainCategoryId { get; set; }
 
     public ICollection<Product> Products { get; set; }
+   
 }

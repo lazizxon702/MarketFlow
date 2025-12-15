@@ -1,5 +1,6 @@
 ﻿using MarketFlow.Data;
 using MarketFlow.DTO.CategoryDTO;
+using MarketFlow.DTO.ProductDTO;
 using MarketFlow.Enums;
 using MarketFlow.Interface;
 using MarketFlow.Models.Inner;
@@ -10,16 +11,17 @@ namespace MarketFlow.Services;
 
 public class CategoryService(AppDbContext db) : ICategoryService
 {
-    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetAll()
+    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetMainCategories()
     {
         try
         {
             var list = await db.Categories
-                .Where(c => !c.IsDeleted)
+                .Where(c => !c.IsDeleted )
                 .Select(c => new CategoryReadDTO
                 {
                     Id = c.Id,
-                    Keyword = c.Keyword
+                    Keyword = c.Keyword,
+                  
                 })
                 .ToListAsync();
 
@@ -33,33 +35,52 @@ public class CategoryService(AppDbContext db) : ICategoryService
         }
     }
 
-    public async Task<DefaultResponse<List<CategoryReadDTO>>> GetById(int id)
+    public async Task<DefaultResponse<CategoryReadDTO>> GetChildCategories(int id)
     {
         try
         {
-            var categoryList = await db.Categories
+            var category = await db.Categories
                 .Where(c => c.Id == id && !c.IsDeleted)
                 .Select(c => new CategoryReadDTO
                 {
                     Id = c.Id,
-                    Keyword = c.Keyword
+                    Keyword = c.Keyword,
+                    Products = c.Products
+                        .Where(p => !p.IsDeleted)
+                        .Select(p => new ProductReadDTO
+                        {
+                            Id = p.Id,
+                            NameS = p.NameS,
+                            Description = p.Description,
+                            Price = p.Price,
+                            CategoryName = c.Keyword,
+                            CreatedDate = p.CreatedDate
+                        })
+                        .ToList()
                 })
-                .ToListAsync();
+                .FirstOrDefaultAsync();
 
-            if (categoryList == null || categoryList.Count == 0)
-                return new DefaultResponse<List<CategoryReadDTO>>(
+            if (category == null)
+            {
+                return new DefaultResponse<CategoryReadDTO>(
                     new ErrorResponse("Kategoriya topilmadi", (int)ResponseCode.NotFound)
                 );
+            }
 
-            return new DefaultResponse<List<CategoryReadDTO>>(categoryList);
+            return new DefaultResponse<CategoryReadDTO>(
+                category,
+                "Kategoriya va mahsulotlar topildi"
+            );
         }
         catch
         {
-            return new DefaultResponse<List<CategoryReadDTO>>(
+            return new DefaultResponse<CategoryReadDTO>(
                 new ErrorResponse("Kategoriya olishda xatolik yuz berdi", (int)ResponseCode.ServerError)
             );
         }
     }
+
+
 
     public async Task<DefaultResponse<string>> Create(CategoryCreateDTO dto)
     {

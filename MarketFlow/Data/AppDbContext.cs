@@ -51,6 +51,12 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.CategoryId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        modelBuilder.Entity<Category>()
+            .HasOne<Category>()          
+            .WithMany()
+            .HasForeignKey(c => c.mainCategoryId)
+            .OnDelete(DeleteBehavior.Restrict);
+
 
         modelBuilder.Entity<Order>()
             .Property(o => o.TotalAmount)

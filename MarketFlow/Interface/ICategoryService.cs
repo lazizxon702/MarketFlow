@@ -5,8 +5,8 @@ namespace MarketFlow.Interface;
 
 public interface ICategoryService
 {
-    Task<DefaultResponse<List<CategoryReadDTO>>>  GetAll();
-    Task<DefaultResponse<List<CategoryReadDTO>>> GetById(int id);
+    Task<DefaultResponse<List<CategoryReadDTO>>>  GetMainCategories();
+    Task<DefaultResponse<CategoryReadDTO>> GetChildCategories(int mainId);
     Task<DefaultResponse<string>> Create(CategoryCreateDTO dto);
     Task<DefaultResponse<bool>> Update(int id, CategoryUpdateDTO dto);
     Task<DefaultResponse<bool>> Delete(int id);
