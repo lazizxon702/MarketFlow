@@ -1,9 +1,10 @@
-﻿using MarketFlow.DTO.UserDTO;
-using MarketFlow.Enums;
-using MarketFlow.Interface;
-using MarketFlow.Models.Response;
+﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RootLibrary.DTO.UserDTO;
+using RootLibrary.Enums;
+using RootLibrary.Interface;
+using RootLibrary.Models.Response;
 
 namespace MarketFlow.Controller;
 
@@ -27,10 +28,31 @@ public class UserController(IUserService userService) : ControllerBase
         var user = await userService.GetById(id);
         return user;
     }
+    
+    [Authorize(Roles = "Admin")]
+    [HttpGet("telegram/{telegramId:long}")]
+    public async Task<DefaultResponse<TelegramUserDTO>> GetByTelegramId(long Id)
+    {
+        try
+        {
+            var response = await userService.GetByTelegramId(Id);
+
+           
+            return new DefaultResponse<TelegramUserDTO>(response.Data, "User topildi");
+        }
+        catch (Exception ex)
+        {
+    
+            return new DefaultResponse<TelegramUserDTO>(
+                new ErrorResponse($"Xatolik: {ex.Message}", (int)ResponseCode.ServerError)
+            );
+        }
+    }
+
 
     [AllowAnonymous]
     [HttpPost]
-    public async Task<DefaultResponse<string>> CreateUser([FromBody] UserCreateDTO dto)
+    public async Task<DefaultResponse<string>> CreateUser([FromBody] TelegramUserDTO dto)
     {
         if (!ModelState.IsValid)
         {
@@ -43,7 +65,7 @@ public class UserController(IUserService userService) : ControllerBase
     }
     
     [HttpPut("{id:int}")]
-    public async Task<DefaultResponse<bool>> UpdateUser(int id, UserUpdateDTO dto)
+    public async Task<DefaultResponse<bool>> UpdateUser(int id, TelegramUserDTO dto)
     {
         if (!ModelState.IsValid)
         {

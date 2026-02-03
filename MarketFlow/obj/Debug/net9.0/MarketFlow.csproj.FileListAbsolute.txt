@@ -208,6 +208,7 @@ C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\System.Iden
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\System.Security.Permissions.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\Telegram.Bot.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -275,6 +276,10 @@ C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\zh-Hans\Mic
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\BotLibrary.dll
+C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\RootLibrary.dll
+C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\BotLibrary.pdb
+C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\bin\Debug\net9.0\RootLibrary.pdb
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\obj\Debug\net9.0\MarketFlow.csproj.AssemblyReference.cache
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\user\RiderProjects\MarketFlowV2\MarketFlow\obj\Debug\net9.0\MarketFlow.GeneratedMSBuildEditorConfig.editorconfig

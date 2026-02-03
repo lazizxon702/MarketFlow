@@ -1,9 +1,10 @@
-﻿using MarketFlow.DTO.CategoryDTO;
-using MarketFlow.Enums;
-using MarketFlow.Interface;
-using MarketFlow.Models.Response;
+﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RootLibrary.DTO.CategoryDTO;
+using RootLibrary.Enums;
+using RootLibrary.Interface;
+using RootLibrary.Models.Response;
 
 namespace MarketFlow.Controller;
 
@@ -22,7 +23,7 @@ public class CategoryController(ICategoryService categoryService) : ControllerBa
 
     [AllowAnonymous]
     [HttpGet("{id:int}", Name = "GetChildCategories")]
-    public async Task<DefaultResponse<CategoryReadDTO>> GetChildCategories(int id)
+    public async Task<DefaultResponse<CategoryChildDTO>> GetChildCategories(int id)
     {
         var category = await categoryService.GetChildCategories(id);
         return category;

@@ -21,9 +21,15 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
         <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.14.0" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
         <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+        <PackageReference Include="Telegram.Bot" Version="22.7.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BotLibrary\BotLibrary.csproj" />
+      <ProjectReference Include="..\RootLibrary\RootLibrary.csproj" />
     </ItemGroup>
 
 </Project>

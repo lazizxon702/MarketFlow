@@ -1,0 +1,26 @@
+﻿namespace RootLibrary.Models.Inner;
+
+public class Product
+{
+    public int Id { get; set; }
+    
+    public string NameS { get; set; }
+    
+    public string Description { get; set; }
+    
+    public string ImageFileId { get; set; }
+    
+    public decimal Price { get; set; }
+    
+    public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+    
+    public int CategoryId { get; set; }
+    
+    public Category Category { get; set; }
+    
+    public bool IsDeleted { get; set; } 
+    
+    public ICollection<OrderItem> OrderItems{ get; set; }
+    public ICollection<Cart> Carts { get; set; }
+
+}
