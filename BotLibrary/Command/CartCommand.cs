@@ -54,7 +54,7 @@ namespace BotLibrary.Command
             await bot.SendMessage(
                 chatId: chatId,
                 text: text,
-                parseMode: ParseMode.Markdown, // ✅ V2 emas
+                parseMode: ParseMode.Markdown, 
                 replyMarkup: keyboard
             );
         }
@@ -71,7 +71,7 @@ namespace BotLibrary.Command
                 var sum = qty * price;
                 total += sum;
 
-                // ✅ Markdown (oddiy) uchun minimal escape
+  
                 var safeName = EscapeMarkdown(cart.Product.NameS ?? "");
 
                 text +=
@@ -102,13 +102,12 @@ namespace BotLibrary.Command
             return (text, new InlineKeyboardMarkup(rows));
         }
 
-        // ✅ 1200000 => "1 200 000"
         public static string FormatSum(decimal value)
         {
             return value.ToString("N0", CultureInfo.InvariantCulture).Replace(",", " ");
         }
 
-        // ✅ Oddiy Markdown uchun escape (V2 emas)
+     
         private static string EscapeMarkdown(string text)
         {
             // Markdown (classic) uchun asosan * _ ` [ ] belgilar xalaqit qiladi
