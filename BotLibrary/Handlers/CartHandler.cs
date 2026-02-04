@@ -79,7 +79,6 @@ namespace BotLibrary.Command
                         return;
                 }
 
-                // ✅ Har bosilganda savat message yangilanadi
                 var carts = await db.Carts
                     .Include(c => c.Product)
                     .Where(c => c.UserId == user.Id && !c.IsOrdered)
